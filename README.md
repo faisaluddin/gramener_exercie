@@ -1,4 +1,4 @@
-# Steps to running locally
+# Steps to run locally
 git clone https://github.com/faisaluddin/gramener_exercise.gitc <br/>
 cd gramener_exercise <br/>
 pip install -r requirements.txt <br/>
