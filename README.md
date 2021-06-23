@@ -1,9 +1,9 @@
 # Steps to running locally
-git clone https://github.com/faisaluddin/gramener_exercise.git
-cd gramener_exercise
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+git clone https://github.com/faisaluddin/gramener_exercise.gitc <br/>
+cd gramener_exercise <br/>
+pip install -r requirements.txt <br/>
+python manage.py migrate <br/>
+python manage.py runserver <br/>
 
 The app is deployed at https://gramener-faisal.herokuapp.com/
 
