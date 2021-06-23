@@ -22,15 +22,25 @@ class MathViewset(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         module = __import__(instance.operation_name)
-        print(module.__dict__)
 
-        qp = request.GET
-        params = []
-        for p in qp:
-            params.append(int(qp[p]))
+        params = [int(x) for x in request.GET.keys()]
         output = 0
         try:
             output = getattr(module, str(instance.operation_name))(*params)
-        except TypeError as e:
+        except Exception as e:
             output = str(e)
         return Response({'output': output})
+
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = self.get_serializer(
+            instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+
+        path = settings.BASE_DIR / (request.data['operation_name']+'.py')
+        with open(path, 'w') as file:
+            file.write(request.data['func'].lstrip())
+
+        self.perform_update(serializer)
+        return Response(serializer.data)
