@@ -20,7 +20,7 @@ New operation can be created using the POST HTTP request, it will require operat
 ![image](https://user-images.githubusercontent.com/12785657/123029962-9b445500-d3ff-11eb-8665-5cf5695130d7.png)
 Then this func can be used by using the id of the func and passing the required params like below
 ![image](https://user-images.githubusercontent.com/12785657/123030093-d5155b80-d3ff-11eb-8f8a-7012ed827881.png)
-Where here 2 is the id of the resource and 4, 6 are params
+Wherein here 2 is the id of the resource and 4, 6 are params
 
 
 
